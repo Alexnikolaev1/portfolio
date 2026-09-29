@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aleksandr Nikolaev — Python · MCP · Merchant API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14201c;
+      --muted: #3d4f47;
+      --paper: #f3efe6;
+      --band: #1f3d36;
+      --accent: #c45c26;
+      --line: rgba(20, 32, 28, 0.14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 10% -10%, rgba(196, 92, 38, 0.12), transparent 55%),
+        radial-gradient(700px 380px at 100% 0%, rgba(31, 61, 54, 0.16), transparent 50%),
+        linear-gradient(180deg, #f7f3ea 0%, var(--paper) 40%, #ebe4d6 100%);
+      line-height: 1.45;
+    }
+    .wrap { width: min(920px, calc(100% - 2rem)); margin: 0 auto; }
+    header.hero {
+      padding: 3.2rem 0 2.4rem;
+      animation: rise 0.7s ease both;
+    }
+    .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0 0 0.7rem;
+    }
+    .lede {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 38rem;
+      margin: 0 0 1.25rem;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    a.btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.7rem 1.1rem;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    a.btn:hover { transform: translateY(-1px); }
+    a.btn-primary { background: var(--band); color: #f7f3ea; }
+    a.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    section {
+      padding: 1.6rem 0 0.4rem;
+      animation: rise 0.8s ease both;
+      animation-delay: 0.08s;
+    }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      margin: 0 0 0.7rem;
+      letter-spacing: -0.02em;
+    }
+    p { margin: 0 0 0.85rem; color: var(--muted); }
+    .work {
+      display: grid;
+      gap: 0.9rem;
+      margin: 0.6rem 0 1.4rem;
+    }
+    article.piece {
+      border-top: 1px solid var(--line);
+      padding: 1rem 0 0.2rem;
+    }
+    article.piece h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      margin: 0 0 0.25rem;
+    }
+    .tag {
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    ul { margin: 0.35rem 0 0.6rem; padding-left: 1.1rem; color: var(--muted); }
+    li { margin-bottom: 0.25rem; }
+    .offer {
+      background: var(--band);
+      color: #e8efe9;
+      padding: 1.4rem 1.2rem;
+      border-radius: 6px;
+      margin: 1.2rem 0 2rem;
+      animation: rise 0.9s ease both;
+    }
+    .offer h2 { color: #f7f3ea; }
+    .offer p, .offer li { color: #c9d6cf; }
+    .offer strong { color: #fff; }
+    footer {
+      padding: 0 0 2.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    footer a { color: var(--band); font-weight: 700; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1 class="brand">Aleksandr Nikolaev</h1>
+      <p class="lede">
+        Independent Python engineer. I migrate Google Shopping feeds to Merchant API,
+        ship MCP/agent tooling, and automate API workflows — with tests and a clear first milestone.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:alex555196@gmail.com?subject=Merchant%20API%20%2F%20MCP%20project">Email me</a>
+        <a class="btn btn-ghost" href="https://github.com/Alexnikolaev1">GitHub</a>
+        <a class="btn btn-ghost" href="#work">See work</a>
+      </div>
+    </header>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <div class="work">
+        <article class="piece">
+          <div class="tag">Commerce feeds</div>
+          <h3><a href="https://github.com/Alexnikolaev1/content-api-migrator" style="color:inherit;text-decoration:none">Content API → Merchant API migrator</a></h3>
+          <p>
+            Converter and client workflow for Google Shopping migrations:
+            ID rules, amountMicros, ProductAttributes, dry-run audits, delta/resume upload with verify.
+          </p>
+          <ul>
+            <li>Offline demo + HTML audit for sales calls</li>
+            <li>Staging upload with retries for Merchant processing lag</li>
+            <li>Auth via credentials/env only — no secrets in logs</li>
+            <li><a href="https://github.com/Alexnikolaev1/content-api-migrator">github.com/Alexnikolaev1/content-api-migrator</a></li>
+          </ul>
+        </article>
+        <article class="piece">
+          <div class="tag">MCP / agents</div>
+          <h3>Forge, Echo &amp; tooling — MCP servers in daily use</h3>
+          <p>
+            Forge hunts ToS-safe freelance boards and runs a proposal pipeline with Telegram ops.
+            Echo finds explainable anomalies in time series via Matrix Profile.
+          </p>
+          <ul>
+            <li><a href="https://github.com/Alexnikolaev1/forge-mcp">Forge</a> · <a href="https://github.com/Alexnikolaev1/echo">Echo</a> · <a href="https://github.com/Alexnikolaev1/parity">Parity</a> · <a href="https://github.com/Alexnikolaev1/sentinel">Sentinel</a></li>
+            <li>Also: Ops Doctor, Culprit, and other small MCP tools used inside Cursor</li>
+            <li>Strict quality gates: types, lint, high test coverage</li>
+          </ul>
+        </article>
+        <article class="piece">
+          <div class="tag">Integrations</div>
+          <h3>API automation &amp; bots</h3>
+          <p>
+            REST/webhooks, FastAPI-style services, ETL glue, Telegram bots —
+            practical automation that stays maintainable.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <h2>How we can start</h2>
+      <p>
+        Remote · UTC+7 · <strong>alex555196@gmail.com</strong>
+      </p>
+      <ul>
+        <li><strong>Discovery</strong> — $200–400: map your feed/API, risks, and a fixed first milestone</li>
+        <li><strong>First milestone</strong> — $800–2500: working converter/integration you can accept or reject</li>
+        <li><strong>Walk-away</strong> — from ~$400 on scoped work (no endless “quick looks”)</li>
+      </ul>
+      <p style="margin-bottom:0">
+        Best fit: Merchant/Shopping migrations, MCP/agent tooling, Python API automation.
+      </p>
+    </section>
+
+    <footer>
+      Aleksandr Nikolaev · Independent · Remote (UTC+7)<br />
+      <a href="mailto:alex555196@gmail.com">alex555196@gmail.com</a>
+      · <a href="https://github.com/Alexnikolaev1">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
